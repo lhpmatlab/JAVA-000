@@ -1,0 +1,156 @@
+Classfile /C:/workspace/ge'ekJava/L1_JVM/target/classes/HelloByteCode.class
+  Last modified 2020-10-16; size 802 bytes
+  MD5 checksum 1a82d7366a1dcca5d19438fba11b4ad2
+  Compiled from "HelloByteCode.java"
+public class HelloByteCode
+  minor version: 0
+  major version: 52
+  flags: ACC_PUBLIC, ACC_SUPER
+Constant pool:
+   #1 = Methodref          #6.#29         // java/lang/Object."<init>":()V
+   #2 = Fieldref           #30.#31        // java/lang/System.out:Ljava/io/PrintStream;
+   #3 = Methodref          #5.#32         // HelloByteCode.fibonacci:(I)I
+   #4 = Methodref          #33.#34        // java/io/PrintStream.println:(I)V
+   #5 = Class              #35            // HelloByteCode
+   #6 = Class              #36            // java/lang/Object
+   #7 = Utf8               <init>
+   #8 = Utf8               ()V
+   #9 = Utf8               Code
+  #10 = Utf8               LineNumberTable
+  #11 = Utf8               LocalVariableTable
+  #12 = Utf8               this
+  #13 = Utf8               LHelloByteCode;
+  #14 = Utf8               fibonacci
+  #15 = Utf8               (I)I
+  #16 = Utf8               i
+  #17 = Utf8               I
+  #18 = Utf8               n
+  #19 = Utf8               result
+  #20 = Utf8               fib1
+  #21 = Utf8               fib2
+  #22 = Utf8               StackMapTable
+  #23 = Utf8               main
+  #24 = Utf8               ([Ljava/lang/String;)V
+  #25 = Utf8               args
+  #26 = Utf8               [Ljava/lang/String;
+  #27 = Utf8               SourceFile
+  #28 = Utf8               HelloByteCode.java
+  #29 = NameAndType        #7:#8          // "<init>":()V
+  #30 = Class              #37            // java/lang/System
+  #31 = NameAndType        #38:#39        // out:Ljava/io/PrintStream;
+  #32 = NameAndType        #14:#15        // fibonacci:(I)I
+  #33 = Class              #40            // java/io/PrintStream
+  #34 = NameAndType        #41:#42        // println:(I)V
+  #35 = Utf8               HelloByteCode
+  #36 = Utf8               java/lang/Object
+  #37 = Utf8               java/lang/System
+  #38 = Utf8               out
+  #39 = Utf8               Ljava/io/PrintStream;
+  #40 = Utf8               java/io/PrintStream
+  #41 = Utf8               println
+  #42 = Utf8               (I)V
+{
+  public HelloByteCode();
+    descriptor: ()V
+    flags: ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 1: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   LHelloByteCode;
+
+  public static int fibonacci(int);
+    descriptor: (I)I
+    flags: ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=5, args_size=1
+         0: iconst_0
+         1: istore_1
+         2: iload_0
+         3: ifgt          8
+         6: iconst_m1
+         7: ireturn
+         8: iload_0
+         9: iconst_1
+        10: if_icmpeq     18
+        13: iload_0
+        14: iconst_2
+        15: if_icmpne     20
+        18: iconst_1
+        19: ireturn
+        20: iconst_1
+        21: istore_2
+        22: iconst_1
+        23: istore_3
+        24: iconst_3
+        25: istore        4
+        27: iload         4
+        29: iload_0
+        30: if_icmpgt     47
+        33: iload_2
+        34: iload_3
+        35: iadd
+        36: istore_1
+        37: iload_3
+        38: istore_2
+        39: iload_1
+        40: istore_3
+        41: iinc          4, 1
+        44: goto          27
+        47: iload_1
+        48: ireturn
+      LineNumberTable:
+        line 9: 0
+        line 10: 2
+        line 11: 6
+        line 12: 8
+        line 13: 18
+        line 15: 20
+        line 16: 24
+        line 17: 33
+        line 18: 37
+        line 19: 39
+        line 16: 41
+        line 21: 47
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+           27      20     4     i   I
+            0      49     0     n   I
+            2      47     1 result   I
+           22      27     2  fib1   I
+           24      25     3  fib2   I
+      StackMapTable: number_of_entries = 5
+        frame_type = 252 /* append */
+          offset_delta = 8
+          locals = [ int ]
+        frame_type = 9 /* same */
+        frame_type = 1 /* same */
+        frame_type = 254 /* append */
+          offset_delta = 6
+          locals = [ int, int, int ]
+        frame_type = 250 /* chop */
+          offset_delta = 19
+
+  public static void main(java.lang.String[]);
+    descriptor: ([Ljava/lang/String;)V
+    flags: ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=1, args_size=1
+         0: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+         3: iconst_5
+         4: invokestatic  #3                  // Method fibonacci:(I)I
+         7: invokevirtual #4                  // Method java/io/PrintStream.println:(I)V
+        10: return
+      LineNumberTable:
+        line 25: 0
+        line 26: 10
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      11     0  args   [Ljava/lang/String;
+}
+SourceFile: "HelloByteCode.java"
